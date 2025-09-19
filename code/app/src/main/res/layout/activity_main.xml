@@ -37,11 +37,6 @@
         android:clickable="true"
         app:srcCompat="@android:drawable/ic_input_add" />
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/button_edit_city"
-        android:layout_width="301dp"
-        android:layout_height="wrap_content"
-        android:clickable="true"
-        app:srcCompat="@android:drawable/ic_menu_edit" />
+
 
 </LinearLayout>

@@ -59,27 +59,28 @@ public class MainActivity extends AppCompatActivity implements AddCityFragment.A
         cityAdapter = new CityArrayAdapter(this, dataList);
         cityList.setAdapter(cityAdapter);
 
+        Toast.makeText(MainActivity.this, "Tap city to edit.", Toast.LENGTH_LONG).show();
+
         FloatingActionButton fab = findViewById(R.id.button_add_city);
         fab.setOnClickListener(v -> {
             editState = false;
             new AddCityFragment().show(getSupportFragmentManager(), "Add City");
         });
 
-        FloatingActionButton fab2 = findViewById(R.id.button_edit_city);
-        fab2.setOnClickListener(v -> {
-            editState = true;
-            Toast.makeText(MainActivity.this, "Please select the city you want to edit.", Toast.LENGTH_SHORT).show();
-        });
+//        FloatingActionButton fab2 = findViewById(R.id.button_edit_city);
+//        fab2.setOnClickListener(v -> {
+//            editState = true;
+//            Toast.makeText(MainActivity.this, "Please select the city you want to edit.", Toast.LENGTH_SHORT).show();
+//        });
 
 
 
         cityList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                editState = true;
                 editIndex = position;
-                if(editState){
-                    new AddCityFragment().show(getSupportFragmentManager(), "Edit City");
-                }
+                new AddCityFragment().show(getSupportFragmentManager(), "Edit City");
             }
         });
 
